@@ -9,7 +9,7 @@ console.log("Hello from aymen");
 async function loadData() {
   const username = document.getElementById("username").value;
   if (!username) {
-    alert("Veuillez entrer un nom d'utilisateur");
+    alert("Enter a username");
     return;
   }
 
@@ -18,7 +18,7 @@ async function loadData() {
   );
 
   if (!response.ok) {
-    alert("Utilisateur non trouvé");
+    alert("User not found");
     return;
   }
 
@@ -61,7 +61,7 @@ function renderCharts(data) {
     data: {
       labels: data.daily_calories.map(d => d.date),
       datasets: [{
-        label: "Calories par jour",
+        label: "Calories per day",
         data: data.daily_calories.map(d => d.calories),
       }]
     }
@@ -72,7 +72,7 @@ function renderCharts(data) {
     data: {
       labels: data.by_food.map(f => f.food),
       datasets: [{
-        label: "Calories par aliment",
+        label: "Calories per aliment",
         data: data.by_food.map(f => f.calories),
       }]
     }
