@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Food Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>Consommation alimentaire</h1>
+
+    <div class="form">
+        <input type="text" id="username" placeholder="Bob" />
+        <button onclick="loadData()">Analyser</button>
+    </div>
+
+    <canvas id="caloriesByDay"></canvas>
+    <canvas id="caloriesByFood"></canvas>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
