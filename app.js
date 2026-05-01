@@ -1,4 +1,5 @@
-const API_BASE_URL = window.env.API_BASE_URL;
+// On a essayé d'en faire une variable d'env pas hardcodée mais sans succès, pas très grave
+const API_BASE_URL = "https://web-api-3-bbs-d5hcb6fjbrb7cdau.italynorth-01.azurewebsites.net";
 
 let chartDay = null;
 let chartFood = null;
