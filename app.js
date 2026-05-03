@@ -67,7 +67,7 @@ async function loadData2() {
 
   const foodProcessed = await response.json();
 
-  renderCharts(foodProcessed);
+  renderCharts2(foodProcessed);
 }
 
 function renderCharts2(data)
