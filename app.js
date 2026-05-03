@@ -88,7 +88,7 @@ function showFoodEntry(data)
 {
   const foodParagraph=document.getElementById("foodEntryContent");
 
-  foodParagraph.innerHTML=data;
+  foodParagraph.innerHTML=<pre>${JSON.stringify(data, null, 2)}</pre>;
 }
 
 function renderCharts2(data)
