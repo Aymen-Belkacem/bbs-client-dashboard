@@ -76,8 +76,9 @@ async function loadData2() {
   if (!response2.ok) {
     alert("Food entry not found");
     return;
+  }
 
-  foodEntry=await response2.json;
+  const foodEntry=await response2.json();
 
   renderCharts2(foodProcessed);
   showFoodEntry(foodEntry);
