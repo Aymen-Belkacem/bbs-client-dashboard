@@ -3,6 +3,7 @@ const API_BASE_URL = "https://web-api-3-bbs-d5hcb6fjbrb7cdau.italynorth-01.azure
 
 let chartDay = null;
 let chartFood = null;
+let chartStats=null;
 
 console.log("Hello from aymen");
 
@@ -76,6 +77,7 @@ function renderCharts2(data)
   const ctxStats = document.getElementById("foodEntryStats").getContext("2d");
   
   if (chartStats) chartStats.destroy();
+  
 
    const labels = [
     "protein_efficiency",
