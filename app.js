@@ -3,9 +3,10 @@ const API_BASE_URL = "https://web-api-3-bbs-d5hcb6fjbrb7cdau.italynorth-01.azure
 
 let chartDay = null;
 let chartFood = null;
-let chartStats=null;
+let chartStats = null;
 
-console.log("Hello from aymen");
+console.log("Hello from BBS");
+//console.log("Hello from Aymen");
 
 async function loadData() {
   const username = document.getElementById("username").value;
@@ -68,7 +69,25 @@ async function loadData2() {
 
   const foodProcessed = await response.json();
 
+  const response2= await fetch(
+    `${API_BASE_URL}/api/foodentries/${foodprocessed_id}`
+  );
+
+  if (!response2.ok) {
+    alert("Food entry not found");
+    return;
+
+  foodEntry=await response2.json;
+
   renderCharts2(foodProcessed);
+  showFoodEntry(foodEntry);
+}
+
+function showFoodEntry(data)
+{
+  const foodParagraph=document.getElementById("foodEntryContent");
+
+  foodParagraph.innerHTML=data;
 }
 
 function renderCharts2(data)
