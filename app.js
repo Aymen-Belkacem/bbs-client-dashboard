@@ -49,6 +49,54 @@ async function loadData() {
 
 }
 
+async function loadData2() {
+  const foodprocessed_id = document.getElementById("foodprocessed_id").value;
+  if (!foodprocessed_id) {
+    alert("Enter a foodprocessed id");
+    return;
+  }
+
+  const response = await fetch(
+    `${API_BASE_URL}/api/foodprocessed/${foodprocessed_id}`
+  );
+
+    if (!response.ok) {
+    alert("Food processed not found");
+    return;
+  }
+
+  const foodProcessed = await response.json();
+
+  renderCharts(foodProcessed);
+}
+
+function renderCharts2(data)
+{
+
+  const ctxStats = document.getElementById("foodEntryStats").getContext("2d");
+  
+  if (chartStats) chartStats.destroy();
+
+   const labels = [
+    "protein_efficiency",
+    "caloric_density",
+    "sugar_to_protein_ratio",
+    "estimated_carbs"
+  ];
+
+  chartStats=new Chart(ctxStats,{
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        label: "Food entry stats",
+        data: labels.map(key => data[key])
+      }]
+    }
+  });
+
+}
+
 function renderCharts(data) {
   const ctxDay = document.getElementById("caloriesByDay").getContext("2d");
   const ctxFood = document.getElementById("caloriesByFood").getContext("2d");

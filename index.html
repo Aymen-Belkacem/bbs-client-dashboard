@@ -9,18 +9,35 @@
 </head>
 
 <body>
-    <h1>Food consommation</h1>
 
-    <div class="form">
-        <input type="text" id="username" placeholder="Bob" />
-        <button onclick="loadData()">Analyse</button>
-    </div>
+    <section>
+        <h1>Food consommation</h1>
 
-    <canvas id="caloriesByDay"></canvas>
-    <canvas id="caloriesByFood"></canvas>
+        <div class="form">
+            <input type="text" id="username" placeholder="Bob" />
+            <button onclick="loadData()">Analyse</button>
+        </div>
+
+        <canvas id="caloriesByDay"></canvas>
+        <canvas id="caloriesByFood"></canvas>
+    </section>
+
+    <section>
+        <h1>Food entry stats</h1>
+
+        <div class="form">
+            <input type="text" id="foodprocessed_id" placeholder="1" />
+            <button onclick="loadData2()">Fetch processed food entry</button>
+        </div>
+
+        <canvas id="foodEntryStats"></canvas>
+    </section>
 
     <script src="config.js"></script>
     <script src="app.js"></script>
+
+
+
 </body>
 
 </html>
